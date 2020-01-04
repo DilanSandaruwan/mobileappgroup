@@ -23,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //DBHelper DBH = new DBHelper(getApplicationContext());
     }
 
+    public void checkDBConn(){
+
+    }
     public void checkWeatherHere(View view)
     {
         EditText txt_city = (EditText)findViewById(R.id.txt_city);
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .setCallback(new FutureCallback<String>() {
                     @Override
                     public void onCompleted(Exception e, String result) {
-                        Log.i("chuck","Chuck joke is "+ result);
+                        Log.i("weather","details are available. "+ result);
                         displayInfo(result);
                     }
                 });
@@ -73,14 +77,22 @@ public class MainActivity extends AppCompatActivity {
             String str_temp_c = j_current.getString("temp_c");
             String str_wind = j_current.getString("wind_kph");
             String str_cond = j_condition.getString("text");
+            String str_loctime = j_location.getString("localtime");
+            String str_modified = j_current.getString("last_updated");
 
             TextView output_city = findViewById(R.id.txtv_output_city);
             TextView output_temp = findViewById(R.id.txtv_output_temp);
             TextView output_wind = findViewById(R.id.txtv_output_wind);
+            TextView output_cond = findViewById(R.id.txtv_output_cond);
+            TextView output_loctime = findViewById(R.id.txtv_output_localtime);
+            TextView output_modified = findViewById(R.id.txtv_output_modified);
 
             output_city.setText(str_name);
             output_temp.setText(str_temp_c);
             output_wind.setText(str_wind);
+            output_cond.setText(str_cond);
+            output_loctime.setText(str_loctime);
+            output_modified.setText(str_modified);
 
         }catch(JSONException e){
             Toast.makeText(this, "Exceptioned into displayInfo.", Toast.LENGTH_SHORT).show();

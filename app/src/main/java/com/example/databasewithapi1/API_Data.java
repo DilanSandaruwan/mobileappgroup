@@ -1,0 +1,52 @@
+package com.example.databasewithapi1;
+
+public class API_Data {
+
+    private static String str_CITY ;
+    private static String str_LOCT ;
+    private static Double str_TEMP ;
+    private static Double str_WIND ;
+    private static String str_COND ;
+
+
+    public static String getStr_CITY() {
+        return str_CITY;
+    }
+
+    public static String getStr_LOCT() {
+        return str_LOCT;
+    }
+
+    public static Double getStr_TEMP() {
+        return str_TEMP;
+    }
+
+    public static Double getStr_WIND() {
+        return str_WIND;
+    }
+
+    public static String getStr_COND() {
+        return str_COND;
+    }
+
+
+    public static void setStr_CITY(String str_CITY) {
+        API_Data.str_CITY = str_CITY;
+    }
+
+    public static void setStr_LOCT(String str_LOCT) {
+        API_Data.str_LOCT = str_LOCT;
+    }
+
+    public static void setStr_TEMP(Double str_TEMP) {
+        API_Data.str_TEMP = str_TEMP;
+    }
+
+    public static void setStr_WIND(Double str_WIND) {
+        API_Data.str_WIND = str_WIND;
+    }
+
+    public static void setStr_COND(String str_COND) {
+        API_Data.str_COND = str_COND;
+    }
+}

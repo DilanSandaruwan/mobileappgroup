@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewDataLog(View view){
-        dbHelper.queryData();
+        //dbHelper.queryData();
         Intent intent_data = new Intent(this,View_DBData.class);
         //intent_data.putExtra("dbhelper", (Parcelable) dbHelper.);
         this.startActivity(intent_data);

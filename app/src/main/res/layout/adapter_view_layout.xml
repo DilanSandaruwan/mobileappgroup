@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/txtv_1"
+        android:layout_weight="33.3"
+        android:text="TextView 1 city"
+        android:textAlignment="center"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/txtv_2"
+        android:layout_weight="33.3"
+        android:text="Localtime"
+        android:textAlignment="textStart"
+        android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="16"
+                    android:id="@+id/txtv_3"
+                    android:text="TextView 3 temp"
+                    android:textAlignment="textStart"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="16"
+                    android:id="@+id/txtv_lbl_temp"
+                    android:text="Celcius"
+                    android:textAlignment="textStart"
+                    android:gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="16"
+                    android:id="@+id/txtv_4"
+                    android:text="TextView 4 wind"
+                    android:textAlignment="textStart"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="16"
+                    android:id="@+id/txtv_lbl_wind"
+                    android:text="kmph"
+                    android:textAlignment="textStart"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</LinearLayout>

@@ -73,4 +73,20 @@ public class DBHelper extends SQLiteOpenHelper {
             );
         }
     }
+
+    public Cursor getAllData(){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor result = db.rawQuery("SELECT * FROM "+ TABLE_NAME , null);
+
+        return result;
+    }
+
+    public void deleteData(){
+
+    }
+
+    public void updateData(){
+
+    }
 }

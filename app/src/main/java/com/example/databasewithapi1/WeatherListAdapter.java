@@ -43,13 +43,16 @@ public class WeatherListAdapter extends ArrayAdapter<WeatherDetail> {
         TextView tvLoct =(TextView)convertView.findViewById(R.id.txtv_2);
         TextView tvTemp =(TextView)convertView.findViewById(R.id.txtv_3);
         TextView tvWind =(TextView)convertView.findViewById(R.id.txtv_4);
+        TextView tvCond =(TextView)convertView.findViewById(R.id.txtv_cond);
 
         tvCity.setText(wet.getCITY_str());
         tvLoct.setText(wet.getLOCT_str());
         tvTemp.setText(Double.toString(wet.getTEMP_str()));
         tvWind.setText(Double.toString(wet.getWIND_str()));
+        tvCond.setText(wet.getCOND_str());
 
         return convertView;
     }
+
 
 }

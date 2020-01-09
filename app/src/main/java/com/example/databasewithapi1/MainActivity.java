@@ -89,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
     private void displayInfo(String data)
     {
         Log.i("displayInfo.","Entered here");
-        Toast.makeText(this, "Entered into displayInfo.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Entered into displayInfo.", Toast.LENGTH_SHORT).show();
 
         str_data=getsetJsonData(data);
-        Toast.makeText(this, str_data[1], Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, str_data[1], Toast.LENGTH_SHORT).show();
         Log.i("displayInfo.","Finished here");
-        Toast.makeText(this, "Exited from displayInfo.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Exited from displayInfo.", Toast.LENGTH_SHORT).show();
     }
     public String[] getsetJsonData(String data){
         try
@@ -107,8 +107,6 @@ public class MainActivity extends AppCompatActivity {
             JSONObject j_condition = j_current.getJSONObject("condition");
 
             Log.i("displayInfo.","Middle here");
-
-            Toast.makeText(this, "hail me", Toast.LENGTH_SHORT).show();
 
             String str_name = j_location.getString("name");
             String str_temp_c = j_current.getString("temp_c");
@@ -141,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
             return str_array;
 
         }catch(JSONException e){
-            Toast.makeText(this, "Exceptioned into displayInfo.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Exceptioned into displayInfo.", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
             return null;
         }

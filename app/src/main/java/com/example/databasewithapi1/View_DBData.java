@@ -8,6 +8,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -22,6 +24,10 @@ import java.util.ArrayList;
 
 public class View_DBData extends AppCompatActivity {
 
+    String item;
+    Integer indexVal;
+    ArrayAdapter myAdapter;
+    ArrayList<WeatherDetail> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +52,7 @@ public class View_DBData extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(getApplicationContext());
         Cursor res = dbHelper.getAllData();
 
-        ArrayList<WeatherDetail> arrayList = new ArrayList<>();
+        arrayList = new ArrayList<>();
 
         while (res.moveToNext()) {
             //TableRow tableRow=new TableRow();
@@ -68,6 +74,19 @@ public class View_DBData extends AppCompatActivity {
         Log.i("Arraylist",arrayList.get(2).getCITY_str());
         WeatherListAdapter adapter = new WeatherListAdapter(this, R.layout.adapter_view_layout, arrayList);
         listView.setAdapter(adapter);
+    }
+
+    public void deleteData(){
+        ListView listView = findViewById(R.id.my_listview);
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                item = parent.getItemAtPosition(position).toString() + "has been selected.";
+                Toast.makeText( View_DBData.this, "item ", Toast.LENGTH_SHORT).show();
+                arrayList.remove(position);
+                return true;
+            }
+        });
     }
 
 }
